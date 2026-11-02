@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Data, features and outputs (never versioned; checkpoints and predictions are downloaded separately)
+/data/
+/features/
+/models/
+/outputs/
+/runs/
+*.npy
+*.npz
+*.h5
+*.csv.gz
+
+# Model weights and exported engines
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.engine
+*.trt
+
+# Frame-level predictions and real-time session reports
+frame_predictions_*.json
+session_report_*.json
+
+# Videos and frames
+*.mp4
+*.avi
+*.mov
+frames_5fps/
+
+# Logs
+*.log
+wandb/
+lightning_logs/
+
+# Paper sources (kept in Overleaf)
+*.tex
+*.bib
+*.aux
+*.bbl
+*.blg
+*.synctex.gz
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Training and model code: not released until the paper is accepted
+/classification/
+/evaluation/cas_colon_eval.py
+/evaluation/memory_horizon.py
+/evaluation/recurrent_check.py
+/evaluation/transformer_latency.py
+/evaluation/causal_filter.py
+/evaluation/cas_colon_decoders.py
+/evaluation/extra_cis.py
+/evaluation/aug_tables.py
+/evaluation/gru_tables.py
+/evaluation/transformer_tables.py
+/evaluation/loss_tables.py
+/evaluation/jang_protocol.py
+/hmm/

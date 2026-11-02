@@ -1,0 +1,10 @@
+numpy==1.26.4
+pandas==2.3.3
+scipy==1.15.3
+scikit-learn==1.7.2
+timm==0.9.16
+einops==0.8.2
+matplotlib==3.9.2
+# needed to build the EndoMamba fork of causal_conv1d and mamba_ssm
+packaging
+ninja
