@@ -204,7 +204,8 @@ The Colon-Audit predictions used for comparison are listed in
 - **Confidence intervals** come from a paired video-level bootstrap: 2,000 resamples, seed 0, percentile
   intervals. The bootstrap averages the gain over the paired runs of both models before rounding, so it
   gives the same numbers on every run.
-- **Rounding.** Table values are computed from unrounded per-run results and rounded once, when printed.
+- **Rounding.** Table values are computed from unrounded per-run results and rounded once, when printed
+  (Table 1 with one decimal, as in the paper).
 - **Error near lesions.** The error rate within ±30 s of an annotated lesion is computed only on those frames
   (`near_lesion = 1`). Results: 30.5 % for ours vs. 39.3 % for Colon-Audit + HMM on 5-fold, and 33.6 % vs.
   42.2 % on cross-center.
