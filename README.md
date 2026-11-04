@@ -59,6 +59,8 @@ Colon-Audit). Ours: mean ± std over 5 training runs per fold.
 - **WMAPE:** withdrawal-time mean absolute percentage error per video.
 - **Cross-center (4-fold):** the test centers are unseen during training.
 - **5-fold:** mixed-center; the test centers also appear in training.
+- **Gains and 95% CIs** (e.g. +6.1 [+4.3, +7.8]): paired video-level bootstrap, explained in
+  [docs/statistics.md](docs/statistics.md).
 
 <p align="center">
   <img src="figures/fig2.jpg" width="100%" alt="Frame-wise predictions for procedure 004-006">
@@ -82,11 +84,12 @@ and 65.6 % with the cross-center models.
 Colon-Audit-Mamba/
 ├── paths.py                local paths to the data, the embeddings, EndoMamba and the outputs
 ├── requirements.txt
-├── evaluation/             metrics, Table 1 and Mamba rows of Table 2 with paired bootstrap CIs, per-fold gains
+├── evaluation/             metrics, Table 1 and Mamba rows of Table 2 with paired bootstrap CIs, per-fold gains,
+│                           bootstrap figure
 ├── analysis/               figure_timeline.py (Figure 2)
 ├── datasets/               CAS-Colon preprocessing, near-lesion targets for REAL-Colon
-├── docs/                   download links for checkpoints and predictions
-└── figures/                figures of this README
+├── docs/                   download links for checkpoints and predictions, statistics explained
+└── figures/                figures of this README and of docs/
 ```
 
 ## Installation
@@ -203,7 +206,7 @@ The Colon-Audit predictions used for comparison are listed in
   Inference is deterministic, so the released predictions give the same tables on every run.
 - **Confidence intervals** come from a paired video-level bootstrap: 2,000 resamples, seed 0, percentile
   intervals. The bootstrap averages the gain over the paired runs of both models before rounding, so it
-  gives the same numbers on every run.
+  gives the same numbers on every run. See [docs/statistics.md](docs/statistics.md) for a worked example.
 - **Rounding.** Table values are computed from unrounded per-run results and rounded once, when printed
   (Table 1 with one decimal, as in the paper).
 - **Error near lesions.** The error rate within ±30 s of an annotated lesion is computed only on those frames
